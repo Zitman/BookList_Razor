@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<br/>>
+<h2>Book list</h2>
+<br/>
+
+<a asp-page="Create" class="btn btn-primary">Create new book</a>
+
+@if (Model.Books.Count() > 0)
+{
+    <form method="Post">
+        <div>
+            <br/>
+            <table class="table table-condensed table-bordered table-hover">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(b => b.Books.FirstOrDefault().ISBN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(b => b.Books.FirstOrDefault().Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(b => b.Books.FirstOrDefault().Author)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(b => b.Books.FirstOrDefault().Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(b => b.Books.FirstOrDefault().Availability)
+                    </th>
+                </tr>
+                @foreach (var item in Model.Books)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(b=>item.ISBN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(b=>item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(b=>item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(b=>item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(b=>item.Availability)
+                    </td>
+                </tr>
+                }
+            </table>
+        </div>
+    </form>
+}
+else
+{
+    <p>No books found</p>
+}
