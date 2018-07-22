@@ -1,21 +1,23 @@
 ﻿@page
-@model CreateModel
+@model EditModel
 @{
 }
 
-<br/>
-<h2>Create book</h2>
-<br/>
+
+<br />
+<h2>Edit book</h2>
+<br />
 <div style="border: 1px solid #bbb9b9; border-radius: 5px">
     <form method="post">
         <div class="row" style="padding-left: 50px; padding-top: 30px;">
+            <input type="hidden" asp-for="Book.Id" />
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-1">
                         <label asp-for="Book.ISBN"></label>
                     </div>
                     <div class="col-sm-4">
-                        <input asp-for="Book.ISBN" class="form-control" autofocus="autofocus"/>
+                        <input asp-for="Book.ISBN" class="form-control" autofocus="autofocus" />
                     </div>
                 </div>
                 <span asp-validation-for="Book.ISBN" class="text-danger"></span>
@@ -64,9 +66,9 @@
                 </div>
                 <span asp-validation-for="Book.Availability" class="text-danger"></span>
             </div>
-            <br/>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary btn-sm"/>
+                <input type="submit" value="Update" class="btn btn-primary btn-sm" />
                 <a asp-page="Index" class="btn btn-success btn-sm">Back to list</a>
             </div>
         </div>

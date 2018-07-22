@@ -1,11 +1,11 @@
 ﻿@page
-@model CreateModel
+@model DetailsModel
 @{
 }
 
-<br/>
-<h2>Create book</h2>
-<br/>
+<br />
+<h2>Book details</h2>
+<br />
 <div style="border: 1px solid #bbb9b9; border-radius: 5px">
     <form method="post">
         <div class="row" style="padding-left: 50px; padding-top: 30px;">
@@ -15,10 +15,9 @@
                         <label asp-for="Book.ISBN"></label>
                     </div>
                     <div class="col-sm-4">
-                        <input asp-for="Book.ISBN" class="form-control" autofocus="autofocus"/>
+                        <input asp-for="Book.ISBN" disabled class="form-control" />
                     </div>
                 </div>
-                <span asp-validation-for="Book.ISBN" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -26,10 +25,9 @@
                         <label asp-for="Book.Title"></label>
                     </div>
                     <div class="col-sm-4">
-                        <input asp-for="Book.Title" class="form-control" />
+                        <input asp-for="Book.Title" disabled class="form-control" />
                     </div>
                 </div>
-                <span asp-validation-for="Book.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -37,10 +35,9 @@
                         <label asp-for="Book.Author"></label>
                     </div>
                     <div class="col-sm-4">
-                        <input asp-for="Book.Author" class="form-control" />
+                        <input asp-for="Book.Author" disabled class="form-control" />
                     </div>
                 </div>
-                <span asp-validation-for="Book.Author" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -48,10 +45,9 @@
                         <label asp-for="Book.Price"></label>
                     </div>
                     <div class="col-sm-4">
-                        <input asp-for="Book.Price" class="form-control" />
+                        <input asp-for="Book.Price" disabled class="form-control" />
                     </div>
                 </div>
-                <span asp-validation-for="Book.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -59,14 +55,12 @@
                         <label asp-for="Book.Availability"></label>
                     </div>
                     <div class="col-sm-4">
-                        <input asp-for="Book.Availability" class="form-control" />
+                        <input asp-for="Book.Availability" disabled class="form-control" />
                     </div>
                 </div>
-                <span asp-validation-for="Book.Availability" class="text-danger"></span>
             </div>
-            <br/>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary btn-sm"/>
                 <a asp-page="Index" class="btn btn-success btn-sm">Back to list</a>
             </div>
         </div>
